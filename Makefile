@@ -13,3 +13,7 @@ publish:
 	git add .
 	git commit -m "automatic git update from Makefile"
 	git push
+
+jup:
+	docker run -it -p 80:8888 -v `pwd`:/home/notebooks/ tbutzer/jupyter-lite jupyter notebook --allow-root --ip="0.0.0.0" --NotebookApp.token='yaml'
+
