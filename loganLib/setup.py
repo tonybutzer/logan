@@ -14,7 +14,6 @@ setup(name='loganLib',
           'folium',
           'shapely',
           'pyproj',
-          'pygeo',
       ],
 
       )
