@@ -8,3 +8,5 @@
 ## basically I want a new cleaner display a geojson file 
 
 - the old one is dated and has too many weak dependencies
+
+## This task was mostly completed for week 3 class
