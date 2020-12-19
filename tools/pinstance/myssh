@@ -1,0 +1,5 @@
+#! /bin/bash
+
+remoteip=`pinstance getip --tag $1`
+
+ssh -X -i "~/CHS-LSDSDPAS-butzer.pem" ubuntu@${remoteip}
