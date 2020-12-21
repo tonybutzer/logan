@@ -1,4 +1,20 @@
 cmds:
 	sudo apt update
 	sudo apt install make
-	sudo apt install python3-pip
+	sudoapt install python3-pip
+
+
+tf:
+	mkdir -p ./bin
+	(cd ./bin ; wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip)
+	(cd ./bin; unzip *.zip)
+
+
+docker:
+	sudo apt-get -y update
+	sudo apt-get -y install docker.io
+	sudo apt-get -y install docker-compose
+	sudo docker run hello-world
+
+dgroup:
+	 sudo usermod -aG docker ubuntu
