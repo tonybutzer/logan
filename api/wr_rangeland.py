@@ -73,8 +73,8 @@ def scrape_range_data(year):
 
 
 if __name__ == "__main__":
-    for int_year in range(1984, 2019+1):
-    #for int_year in range(2009, 2017+1):
+    #for int_year in range(1984, 2019+1):
+    for int_year in range(1985, 2019+1):
         year = str(int_year)
         scrape_range_data(year)
 

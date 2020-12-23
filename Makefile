@@ -17,3 +17,19 @@ publish:
 jup:
 	docker run -it -p 80:8888 -v `pwd`:/home/jovyan/ tbutzer/jupyter-rise jupyter notebook --allow-root --ip="0.0.0.0" --NotebookApp.token='yaml'
 
+
+Image=tbutzer/eco_docker_image
+
+build:
+	docker build -t ${Image} .
+
+run:
+	docker run -it ${Image} bash
+
+exec:
+	docker exec -it ${Image} bash
+
+images:
+	docker image ls
+	echo ======================================================================
+	docker image ls | grep greg
