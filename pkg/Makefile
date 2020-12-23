@@ -24,3 +24,6 @@ eco-bucket:
 	aws s3 mb s3://eco-w1
 	echo eco bucket >> Readme.md
 	aws s3 cp Readme.md s3://eco-w1
+
+install-s3fs:
+	sudo apt install s3fs
