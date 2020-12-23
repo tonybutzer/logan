@@ -44,8 +44,8 @@ def _run_command(cmd, verbose=False):
 def scrape_range_data(year):
     url='/vsicurl/http://rangeland.ntsg.umt.edu/data/rap/rap-vegetation-cover/v2'
     band = ' -b 1 '
-    window = f' {nw[0]} {nw[1]}, {se[0]} {se[1]} '
-    print(window)
+    # window = f' {nw[0]} {nw[1]}, {se[0]} {se[1]} '
+#     print(window)
     cmd='gdal_translate -co compress=lzw -co tiled=yes -co bigtiff=yes '
     
     _mkdir_p('TIF')
@@ -54,18 +54,19 @@ def scrape_range_data(year):
     out_prefix='logan/in/raw/range_grass'
     filen = f'vegetation-cover-v2-{year}.tif'
 
-    full_cmd = cmd + band + ' -projwin ' + window + url + '/' + filen + ' TIF/' + filen
+#     full_cmd = cmd + band + ' -projwin ' + window + url + '/' + filen + ' TIF/' + filen
+    full_cmd = cmd + band  + url + '/' + filen + ' TIF/' + filen
     print(full_cmd)
 
     _run_command(full_cmd, True)
 
-    bucket = 'dev-et-data'
-    bucket_filepath = f'logan/in/raw/range_grass/vegetation-cover-v2-{year}.tif'
+    bucket = 'eco-w1'
+    bucket_filepath = f'in0/rapv2/vegetation-cover-v2-{year}.tif'
     local_file = f'TIF/vegetation-cover-v2-{year}.tif'
 
     s3_push_delete_local(local_file,bucket,bucket_filepath)
 
-    _run_command('aws s3 ls --human s3://dev-et-data/logan/in/raw/range_grass/')
+    _run_command('aws s3 ls --human s3://eco-w1/in0/rapv2/')
 
     # _run_command(' rio info s3://dev-et-data/logan/in/raw/range_grass/vegetation-cover-v2-2019.tif | python -m json.tool')
 
