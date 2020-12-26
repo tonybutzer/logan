@@ -1,0 +1,5 @@
+https://s3-us-west-2.amazonaws.com/mrlc/Annual_Herb_1996_2006.zip
+https://s3-us-west-2.amazonaws.com/mrlc/Annual_Herb_2007_2018.zip
+https://s3-us-west-2.amazonaws.com/mrlc/Herb_1985_1995.zip
+https://s3-us-west-2.amazonaws.com/mrlc/Herb_1996_2006.zip
+https://s3-us-west-2.amazonaws.com/mrlc/Herb_2007_2018.zip
