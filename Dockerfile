@@ -11,6 +11,14 @@ RUN \
 	pip install --no-cache xarray && \
 	pip install --no-cache rioxarray 
 	
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal \
+	 C_INCLUDE_PATH=/usr/include/gdal
+
+RUN echo hi \
+	&& apt-get update -y \
+	&& apt-get install gdal-bin -y \
+	&& apt-get install libgdal-dev -y \
+	&& pip install GDAL==2.4 
 
 
 ENV TONY_VERS=1.9
@@ -18,7 +26,7 @@ RUN mkdir -p /home/eco \
 	&& mkdir -p /home/eco/api
 
 COPY loganLib /home/eco/loganLib
-COPY api_etm /home/etm/api_etm
+COPY api /home/eco/api
 
 RUN (cd /home/eco/loganLib; make)
 

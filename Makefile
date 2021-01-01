@@ -33,3 +33,6 @@ images:
 	docker image ls
 	echo ======================================================================
 	docker image ls | grep greg
+
+example:
+	echo docker run -i tbutzer/eco_docker_image python3 yr_rangeland.py -y 1993 
