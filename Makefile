@@ -34,5 +34,7 @@ images:
 	echo ======================================================================
 	docker image ls | grep greg
 
+git-hell:
+	echo git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch TOO_BIG_FILE'
 example:
 	echo docker run -i tbutzer/eco_docker_image python3 yr_rangeland.py -y 1993 
